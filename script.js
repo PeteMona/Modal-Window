@@ -7,17 +7,36 @@ const btnsOpenModal = document.querySelectorAll(".show-modal"); // returns a nod
 
 console.log(btnsOpenModal);
 
-const openModal = function () {
-  console.log("Button clicked");
-  modal.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-};
+for (let i = 0; i < btnsOpenModal.length; i++)
+  btnsOpenModal[i].addEventListener("click", function () {
+    console.log("Button clicked");
+    modal.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+  });
 
 const closeModal = function () {
-  console.log("Button clicked");
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
 };
+btnCloseModal.addEventListener("click", closeModal);
+
+overlay.addEventListener("click", closeModal);
+
+//---------------------------------------------
+// OPEN FUNCTION
+// const openModal = function () {
+//   console.log("Button clicked");
+//   modal.classList.remove("hidden");
+//   overlay.classList.remove("hidden");
+// };
+
+// const closeModal = function () {
+//   console.log("Button clicked");
+//   modal.classList.add("hidden");
+//   overlay.classList.add("hidden");
+// };
+// CLOSING FUNCTION
+// --------------------------------------------
 
 // for (let i = 0; i < btnsOpenModal.length; i++) {
 //   console.log(btnsOpenModal[i].textContent);
@@ -27,12 +46,16 @@ const closeModal = function () {
 //   btnsOpenModal[i].addEventListener('click', openModal);
 // }
 
-btnsOpenModal.forEach((btn) => {
-  btn.addEventListener("click", openModal);
-});
+//------------------------------------------------
+// OPENING FUNCTION
+// btnsOpenModal.forEach((btn) => {
+//   btn.addEventListener("click", openModal);
+// });
 
-btnCloseModal.addEventListener("click", closeModal);
-overlay.addEventListener("click", closeModal);
+// btnCloseModal.addEventListener("click", closeModal);
+// overlay.addEventListener("click", closeModal);
+// CLOSING FUNCTION
+// ---------------------------------------------
 
 // Keyboard events
 // global event listener
